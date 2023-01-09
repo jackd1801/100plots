@@ -123,9 +123,9 @@ animate(plot2.animation, height=500, width=800, fps=30, duration = 25,
 
 tidydoses <- newdoses %>%
               select(date, age, firstdoseroll, seconddoseroll, thirddoseroll)%>%
-              rename(first = firstdoseroll,
-                     second = seconddoseroll,
-                     third = thirddoseroll)%>%
+              rename(First = firstdoseroll,
+                     Second = seconddoseroll,
+                     Third = thirddoseroll)%>%
               pivot_longer(cols=c("First", "Second", "Third"), names_to="dose", values_to="total")
 
 plot3 <- ggplot(tidydoses)+
