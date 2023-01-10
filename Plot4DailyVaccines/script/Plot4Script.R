@@ -54,13 +54,15 @@ plot1 <- ggplot(cumdoses)+
                subtitle="First dose (solid), second dose (dashed), third dose (dotted)",
                caption="Data from coronavirus.data.gov\nProduced by @JackD1801")+ 
           scale_x_date()+
-          scale_y_continuous(expand=c(0,0))+
+          scale_y_continuous(expand=c(0,0), limits=c(0,max(cumdoses$firstdose)*1.1), labels = label_comma())+
           theme_classic()+
           theme(legend.position="")+
           geom_text(data=cumdoses%>%filter(date==latestdate), aes(label=age, x=date+6, y=firstdose,color=age), size=4)
           
 
 plot1
+
+ggsave("./Plot4DailyVaccines/output/CumulativePlot.png", plot=plot1, width=8, height=5, units="in")
 
 newdoses <- raw %>%
   select(date, age, VaccineRegisterPopulationByVaccinationDate, newPeopleVaccinatedFirstDoseByVaccinationDate, newPeopleVaccinatedSecondDoseByVaccinationDate, newPeopleVaccinatedThirdInjectionByVaccinationDate)%>%
