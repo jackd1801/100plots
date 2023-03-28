@@ -2,3 +2,46 @@
 .Rhistory
 .RData
 .Ruserdata
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+.Python
+env/
+build/
+dist/
+eggs/
+*.egg-info/
+.eggs/
+*.egg
+
+# Local development settings
+*.env
+*.venv
+*.env.*
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# IDE-specific files
+.idea/
+.vscode/
+*.sublime-workspace
+
+# PyCharm-specific files
+*.iml
+.idea_modules/
+*.pydevproject
+
+# Jupyter Notebook files
+.ipynb_checkpoints/
+
+# macOS specific files
+.DS_Store
+
+# Windows specific files
+Thumbs.db
+Desktop.ini
